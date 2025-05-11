@@ -1,58 +1,41 @@
-# Tool Agent
+# Tool Agent (ADK)
 
-This folder contains a tool agent built using the [google-adk](https://pypi.org/project/google-adk/) framework.
+This project demonstrates how to use the Agent Development Kit (ADK) to build a tool agent that can interact with users and perform tool-based tasks.
 
-## Structure
+## Key Features
+- **Tool Integration**: Easily connect external tools and APIs to your agent.
+- **Structured Outputs**: Consistent and reliable responses for downstream processing.
 
+## Project Structure
 ```
 2-tool-agent/
-  tool_agent/
-    __init__.py
-    agent.py
-    __pycache__/
-  README.md
+├── tool_agent/
+│   ├── agent.py         # Main agent logic
+│   └── __init__.py      # Package initialization
+└── README.md            # This documentation
 ```
 
-- **tool_agent/agent.py**: Defines the main agent logic using the `Agent` class from `google.adk.agents`. This agent is designed to interact with users and perform tool-based tasks.
-- **tool_agent/__init__.py**: Initializes the tool agent package.
-- **tool_agent/__pycache__/**: Contains Python bytecode cache files (auto-generated).
-
-## Requirements
-
-Dependencies are listed in [requirement.txt](../requirement.txt):
-
-- google-adk[database]==0.3.0
-- yfinance==0.2.56
-- psutil==5.9.5
-- litellm==1.66.3
-- google-generativeai==0.8.5
-- python-dotenv==1.1.0
-
-Install them with:
-
-```sh
-pip install -r ../requirement.txt
-```
+## Setup
+1. Activate your virtual environment:
+   ```bash
+   source ../.venv/bin/activate
+   ```
+2. Add your Google API key to a `.env` file:
+   ```
+   GOOGLE_API_KEY=your_api_key_here
+   ```
+3. Install requirements:
+   ```bash
+   pip install -r ../requirement.txt
+   ```
 
 ## Usage
+1. Start the ADK web UI:
+   ```bash
+   cd 2-tool-agent
+   adk web
+   ```
+2. Select your tool agent in the web UI and enter your prompt.
 
-1. Set your Google API key in a `.env` file (see example in the basic agent folder).
-2. Import and use the agent in your application:
-
-```python
-from tool_agent.agent import root_agent
-
-# Use root_agent as needed
-```
-
-## About Google ADK Tool Agents
-
-Google ADK (Agent Development Kit) allows you to build modular, extensible agents that can interact with users, call APIs, and perform complex tasks. Tool agents are designed to:
-- Integrate with external tools and APIs
-- Process user input and provide intelligent responses
-- Be easily extended with new capabilities
-
-For more information, see the [google-adk documentation](https://pypi.org/project/google-adk/).
-
----
-**Note:** Ensure your environment variables are set correctly before running the agent.
+## References
+- [ADK Documentation](https://google.github.io/adk-docs/)

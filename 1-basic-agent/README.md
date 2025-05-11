@@ -1,52 +1,41 @@
-# Basic Agent
+# Basic Greeting Agent (ADK)
 
-This folder contains a simple greeting agent built using the [google-adk](https://pypi.org/project/google-adk/) framework.
+This project demonstrates how to use the Agent Development Kit (ADK) to build a simple greeting agent.
 
-## Structure
+## Key Features
+- **Conversational Agent**: Interacts with users and provides personalized greetings.
+- **Simple Example**: Great starting point for building more advanced agents with ADK.
 
+## Project Structure
 ```
-basic-agent/
-  greeting_agent/
-    __init__.py
-    .env
-    agent.py
+1-basic-agent/
+├── greeting_agent/
+│   ├── agent.py         # Main agent logic
+│   └── __init__.py      # Package initialization
+└── README.md            # This documentation
 ```
 
-- **greeting_agent/agent.py**: Defines the [`root_agent`](greeting_agent/agent.py) using the `Agent` class from `google.adk.agents`. This agent asks for the user's name and greets them.
-- **greeting_agent/.env**: Stores environment variables, including the `GOOGLE_API_KEY` required for authentication.
-- **greeting_agent/__init__.py**: Imports the agent module for package initialization.
-
-## Requirements
-
-Dependencies are listed in [requirement.txt](../requirement.txt):
-
-- google-adk[database]==0.3.0
-- yfinance==0.2.56
-- psutil==5.9.5
-- litellm==1.66.3
-- google-generativeai==0.8.5
-- python-dotenv==1.1.0
-
-Install them with:
-
-```sh
-pip install -r ../requirement.txt
-```
+## Setup
+1. Activate your virtual environment:
+   ```bash
+   source ../.venv/bin/activate
+   ```
+2. Add your Google API key to a `.env` file:
+   ```
+   GOOGLE_API_KEY=your_api_key_here
+   ```
+3. Install requirements:
+   ```bash
+   pip install -r ../requirement.txt
+   ```
 
 ## Usage
+1. Start the ADK web UI:
+   ```bash
+   cd 1-basic-agent
+   adk web
+   ```
+2. Select your greeting agent in the web UI and enter your prompt.
 
-1. Set your Google API key in `greeting_agent/.env`.
-2. Import and use the agent in your application:
-
-```python
-from greeting_agent.agent import root_agent
-
-# Use root_agent as needed
-```
-
-## Description
-
-The greeting agent is a helpful assistant that interacts with users by asking for their name and greeting them personally.
-
----
-**Note:** Ensure your environment variables are set correctly before running the agent.
+## References
+- [ADK Documentation](https://google.github.io/adk-docs/)
